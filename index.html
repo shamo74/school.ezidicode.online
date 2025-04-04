@@ -5,7 +5,7 @@
     <title>تسجيل الدخول</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             display: flex;
             justify-content: center;
@@ -14,6 +14,17 @@
             color: #fff;
             flex-direction: column;
         }
+              /* Font Face for TTF */
+        @font-face {
+            font-family: 'arabic';
+            src: url('arabic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Font for entire page */
+        * {
+            font-family: 'arabic', sans-serif;
         .logo {
             width: 80px;
             margin-bottom: 20px;
