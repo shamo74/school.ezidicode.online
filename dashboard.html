@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تعلم اللغة الهولندية</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+        
 
         body {
             font-family: 'Cairo', sans-serif;
@@ -195,7 +195,7 @@
         .popup .sound-btn {
             width: clamp(18px, 5vw, 22px);
             height: clamp(18px, 5vw, 22px);
-            fill: #00c4cc;
+            fill: black;
         }
 
         @keyframes fadeIn {
@@ -304,7 +304,7 @@
             <svg class="sound-btn" viewBox="0 0 24 24" fill="none" stroke="#00c4cc" stroke-width="2">
                 <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4"></path>
             </svg>
-            قراءة صوت
+            
         </button>
         <button onclick="document.getElementById('popup').style.display='none'">التالي</button>
     </div>
@@ -314,7 +314,7 @@
     <script>
         document.getElementById('logout-btn').addEventListener('click', function() {
             localStorage.removeItem('loggedIn');
-            window.location.href = '記載.html';
+            window.location.href = 'index.html';
         });
 
         const jsonUrls = {
