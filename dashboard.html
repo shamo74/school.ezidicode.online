@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تعلم اللغة الهولندية</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
         body {
             font-family: 'Cairo', sans-serif;
             background: linear-gradient(135deg, #1e3c72, #2a5298, #3b5998);
@@ -304,7 +306,7 @@
             </svg>
             قراءة صوت
         </button>
-        <button onclick="document.getElementById('popup').style.display='none'">إخفاء</button>
+        <button onclick="document.getElementById('popup').style.display='none'">التالي</button>
     </div>
 
     <audio id="word-audio"></audio>
@@ -312,11 +314,11 @@
     <script>
         document.getElementById('logout-btn').addEventListener('click', function() {
             localStorage.removeItem('loggedIn');
-            window.location.href = "記載.html';
+            window.location.href = '記載.html';
         });
 
         const jsonUrls = {
-            yezidi: 'https://raw.githubusercontent.com/shamo74/school.ezidicode.online/refs/heads/main/yezidi.json',
+            yezidi: 'yezidi.json',
             shingali: 'https://example.com/shingali.json',
             arabic: 'https://example.com/arabic.json'
         };
@@ -403,7 +405,7 @@
             currentItem = item; // حفظ العنصر الحالي
             popupWord.textContent = item.word;
             popup.style.display = 'block';
-            setTimeout(() => popup.style.display = 'none', 30000);
+            setTimeout(() => popup.style.display = 'none', 3000);
         }
 
         playAudioBtn.addEventListener('click', () => {
