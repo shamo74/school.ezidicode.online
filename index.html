@@ -15,36 +15,29 @@
         * {
             font-family: 'arabic', 'Cairo', sans-serif;
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background: linear-gradient(145deg, #008983, #0086B1, #008983);
+            background: linear-gradient(135deg, #008983, #0086B1);
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 80vh;
-            margin: 0;
+            min-height: 100vh;
             color: #fff;
-            flex-direction: column;
             overflow: hidden;
         }
 
-        .logo { 
-            width: 20vw;
-            max-width: 120px;
-            margin-bottom: 6vh;
-            filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.4));
-        }
-
         .container {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 6vw;
-            border-radius: 10px;
-            width: 10vw;
-            max-width: 400px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4vw;
+            border-radius: 20px;
+            width: 70vw;
+            max-width: 360px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -52,38 +45,36 @@
         .container::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 20%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
-            animation: glow 3s infinite;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+            animation: glow 4s infinite ease-in-out;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 5vh;
-            font-size: clamp(26px, 7vw, 34px);
-            font-weight: 800;
+            margin-bottom: 4vh;
+            font-size: clamp(24px, 6vw, 30px);
+            font-weight: 700;
             color: #fff;
-            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
-            letter-spacing: 1px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
 
         .field {
-            margin-bottom: 4.5vh;
+            margin-bottom: 3.5vh;
             position: relative;
-            animation: fadeIn 0.6s ease forwards;
-            animation-delay: calc(var(--i) * 0.15s);
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: calc(var(--i) * 0.1s);
             opacity: 0;
         }
 
         label {
-            font-size: clamp(13px, 3.5vw, 16px);
-            margin-bottom: 1.5vh;
-            color: #e0e0e0;
+            font-size: clamp(12px, 3vw, 14px);
+            margin-bottom: 1vh;
+            color: #f0f0f0;
             font-weight: 500;
-            letter-spacing: 0.5px;
         }
 
         .input-wrapper {
@@ -94,53 +85,54 @@
 
         input {
             width: 100%;
-            padding: 2.8vw 2.8vw 2.8vw 11vw;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.03);
+            padding: 2.5vw 2.5vw 2.5vw 10vw;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
             color: #fff;
-            font-size: clamp(13px, 3.5vw, 16px);
-            transition: all 0.4s ease;
-            box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.15);
+            font-size: clamp(12px, 3vw, 14px);
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         input:focus {
             border-color: #00d4ff;
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), inset 0 3px 8px rgba(0, 0, 0, 0.15);
-            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5), inset 0 2px 6px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+            outline: none;
         }
 
         input::placeholder {
-            color: #FFFFFF;
+            color: #ddd;
             font-weight: 400;
         }
 
         svg {
             position: absolute;
-            left: 3.5vw;
-            width: clamp(20px, 5vw, 24px);
-            height: clamp(20px, 5vw, 24px);
-            fill: #FFFFFF;
-            transition: fill 0.4s ease;
+            left: 3vw;
+            width: clamp(18px, 4vw, 22px);
+            height: clamp(18px, 4vw, 22px);
+            fill: #e0e0e0;
+            transition: fill 0.3s ease;
         }
 
         input:focus + svg {
-            fill: #fff;
+            fill: #00d4ff;
         }
 
         button {
             width: 100%;
-            padding: 3.2vh;
+            padding: 2.5vh;
             background: linear-gradient(135deg, #00d4ff, #007bff);
             color: #fff;
             border: none;
-            border-radius: 15px;
-            font-size: clamp(15px, 4vw, 19px);
-            font-weight: 700;
+            border-radius: 12px;
+            font-size: clamp(14px, 3.5vw, 16px);
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -152,7 +144,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             transition: all 0.4s ease;
         }
 
@@ -161,102 +153,80 @@
         }
 
         button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.7);
+            transform: translateY(-3px);
+            box-shadow: 0 8px Reactor 20px rgba(0, 212, 255, 0.6);
             background: linear-gradient(135deg, #00eaff, #0091ff);
         }
 
         button:active {
             transform: translateY(0);
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 3px 10px rgba(0, 212, 255, 0.3);
         }
 
         .links {
-            margin-top: 3.5vh;
+            margin-top: 3vh;
             text-align: center;
         }
 
-        .links a {
-            color: #d0d0d0;
-            text-decoration: none;
-            display: block;
-            margin: 2vh 0;
-            font-size: clamp(13px, 3.5vw, 15px);
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .links button {
+            width: 80%;
+            margin: 1.5vh auto;
+            padding: 1.8vh;
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+            font-size: clamp(12px, 3vw, 14px);
         }
 
-        .links a:hover {
-            color: #00d4ff;
-            transform: translateX(8px);
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 1.5vh 0;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(25px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes glow {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(360deg); }
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 7vw;
-                width: 85vw;
-            }
-            .logo {
-                width: 25vw;
+                padding: 6vw;
+                width: 80vw;
             }
             input {
-                padding: 3.2vw 3.2vw 3.2vw 12vw;
+                padding: 3vw 3vw 3vw 11vw;
             }
             svg {
-                left: 4vw;
+                left: 3.5vw;
             }
             button {
-                padding: 2.8vh;
+                padding: 2.2vh;
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 9vw;
-                width: 90vw;
+                padding: 8vw;
+                width: 85vw;
             }
             h2 {
-                margin-bottom: 4vh;
+                margin-bottom: 3vh;
             }
             .field {
-                margin-bottom: 3.5vh;
+                margin-bottom: 3vh;
             }
             .links {
-                margin-top: 2.5vh;
+                margin-top: 2vh;
             }
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (localStorage.getItem("loggedIn") === "true") {
-                window.location.href = "dashboard.html";
-            }
-
-            // إضافة حدث النقر للروابط
-            document.getElementById("forgot-password").addEventListener("click", function(e) {
-                e.preventDefault(); // منع السلوك الافتراضي للرابط
-                window.location.href = "newpass.html"; // التوجيه إلى صفحة نسيت كلمة المرور
-            });
-
-            document.getElementById("register").addEventListener("click", function(e) {
-                e.preventDefault(); // منع السلوك الافتراضي للرابط
-                window.location.href = "register.html"; // التوجيه إلى صفحة التسجيل
-            });
-        });
-    </script>
 </head>
 <body>
-
     <div class="container">
         <h2>تسجيل الدخول</h2>
         <div class="field" style="--i: 1">
@@ -280,24 +250,23 @@
                 <input type="text" id="phone" placeholder="أدخل رقم هاتفك" required>
             </div>
         </div>
-        <button onclick="login()">تسجيل الدخول</butt<div class="links">
-     
-
-        
+        <button onclick="login()">تسجيل الدخول</button>
+        <div class="links">
             
-              
-            
-         
+            <button onclick="window.location.href='register.html'">إنشاء حساب تعليم الجديد</button>
+           
+            <button onclick="window.location.href='newpass.html'">هل نسيت كلمة المرور؟</button>
+            <hr>
         </div>
-         
-    </div><div class="links">
-    	  <Hr/>
-            <a href="register.html" >إنشاء حساب تعليم الجديد</a>
-            <Hr/>
-            <div class="links">
-            <a href="newpass.html" id="forgot-password">هل نسيت كلمة المرور؟</a>
-              <Hr/>
+    </div>
+
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (localStorage.getItem("loggedIn") === "true") {
+                window.location.href = "dashboard.html";
+            }
+        });
+
         function login() {
             let username = document.getElementById('username').value;
             let password = document.getElementById('password').value;
