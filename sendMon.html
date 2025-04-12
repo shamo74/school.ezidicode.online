@@ -1,11 +1,10 @@
-<!DOCTYPE html><html lang="ar">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اختيار طريقة الشراء</title>
-  <style>
-    body {
-      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>اختيار طريقة الشراء</title>
+  <style> 
+
     /* Font Face for TTF */
         @font-face {
             font-family: 'arabic';
@@ -17,25 +16,17 @@
         /* Font for entire page */
         * {
             font-family: 'arabic', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+        }
+    body {
+    	
+      background: linear-gradient(135deg, #008983, #2a5298);
       color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 30px;
     }
-      /* Font Face for TTF */
-        @font-face {
-            font-family: 'arabic';
-            src: url('arabic.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        /* Font for entire page */
-        * {
-            font-family: 'arabic', sans-serif;
-        }
+      
     .back-btn {
       align-self: flex-start;
       margin-bottom: 15px;
@@ -49,7 +40,7 @@
       background: rgba(255,255,255,0.2);
     }
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 2px;
       text-align: center;
     }
     .methods, .prices {
@@ -76,7 +67,7 @@
       width: 42px;
       height: 42px;
       margin-left: 10px;
-      border-radius: 10px;
+      border-radius: 4px;
     }
     .selected {
       border: 2px solid #00ffcc;
@@ -122,7 +113,7 @@
       <span>MasterCard / Visa</span>
       <span class="checkmark"></span>
     </div>
-    <div class="method" onclick="selectMethod(this, 'PayPal', 'https://www.paypal.com/ncp/payment/ZCFRE33EZ9Q7S')">
+    <div class="method" onclick="selectMethod(this, 'PayPal', 'paypal.html')">
       <img src="https://cdn.pixabay.com/photo/2018/05/08/21/29/paypal-3384015_1280.png" alt="PayPal">
       <span>PayPal</span>
       <span class="checkmark"></span>
