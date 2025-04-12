@@ -10,8 +10,10 @@
                 },
                 { 
                     "word": "How gaat het | كيف حالك", 
-                    "audio": "Jooo.mp3", 
-                    "slowAudio": "store.mp3" 
+                    "audio": "mp3/ezidi_dutch
+/a1.mp3", 
+                    "slowAudio": "mp3/ezidi_dutch
+/d1.mp3" 
                 },
                 { 
                     "word": "از جوگو ما", 
