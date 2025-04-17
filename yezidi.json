@@ -5,23 +5,23 @@
             "content": [
                 { 
                     "word": " ياگ 1  -  een 1 ", 
-                    "audio": "d-a/nl9.mp3", 
-                    "slowAudio": "d-a/ez9.mp3" 
+                    "audio": "d-a/ez9.mp3", 
+                    "slowAudio": "d-a/nl9.mp3" 
                 },
                 { 
                     "word": "ددو 2  - twee 2", 
-                    "audio": "d-a/nl2.mp3", 
-                    "slowAudio": "d-a/ez2.mp3" 
+                    "audio": "d-a/ez2.mp3", 
+                    "slowAudio": "d-a/nl2.mp3" 
                 },
                 { 
-                    "word": "از جوگو ما", 
-                    "audio": "Jooo.mp3", 
-                    "slowAudio": "store.mp3" 
+                    "word": "جى اخباري طيا - hoe gaat het", 
+                    "audio": "d-a/ez1.mp3", 
+                    "slowAudio": "d-a/nl1.mp3" 
                 },
                 { 
-                    "word": "از جوگو ما", 
-                    "audio": "Jooo.mp3", 
-                    "slowAudio": "store.mp3" 
+                    "word": "نافي من خديدا يا - Mijn naam is Khadida", 
+                    "audio": "d-a/ez3.mp3", 
+                    "slowAudio": "d-a/nl3.mp3" 
                 },
                     { 
                     "word": "از جوگو ما", 
