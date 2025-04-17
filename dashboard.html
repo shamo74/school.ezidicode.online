@@ -326,15 +326,15 @@
 </head>
 <body>
     <div class="container" id="welcome-screen">
-        <h1>تعليم اللغة في مدرسة  عبر الإنترنت</h1>
+        <h1>تعليما زمان اب شنگالي 👌🥰</h1>
         <div class="selection">
-            <label>اختر اللغة التي تريد التعلم بها:</label>
+            <label>زمانكي اختيار بگا:</label>
             <div class="field">
                 <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5c0 2.76 2.24 5 5 5s5-2.24 5-5a5 5 0 00-5-5zm0 12c-4.42 0-8 2.24-8 5v2h16v-2c0-2.76-3.58-5-8-5z"/></svg>
                 <select id="language-select">
-                    <option value="yezidi">اللغة الهولندية</option>
-                    <option value="shingali">اللغة الألمانية _ قريبًا</option>
-                    <option value="arabic">اللغة العربية _ قريبًا</option>
+                    <option value="yezidi">تعليما زماني هولندي</option>
+                    <option value="shingali">تعليما زماني الماني - دوراني</option>
+                    <option value="arabic">تعليما زماني عربي - دوراني</option>
                 </select>
             </div>
             <label>اختر المستوى:</label>
@@ -348,20 +348,20 @@
                     <option value="5">B2</option>
                     <option value="6">test</option>
                     <option value="7">examen</option>
-                    <option value="8">المستوى الثامن</option>
+                    <option value="8">مستواي تالي</option>
                 </select>
             </div>
             <button id="start-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-                ابدأ الآن
+                بكفا زگدا
             </button>
             <button id="logout-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"></path>
                 </svg>
-                تسجيل خروج
+                دركتن اشدرفا
             </button>
         </div>
     </div>
@@ -373,7 +373,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M19 12H5M12 19l-7-7 7-7"></path>
             </svg>
-            رجوع
+            ڤگريان
         </button>
     </div>
 
@@ -391,7 +391,7 @@
                 </svg>
             </button>
         </div>
-        <button onclick="document.getElementById('popup').style.display='none'">إخفاء</button>
+        <button onclick="document.getElementById('popup').style.display='none'">سر برن</button>
     </div>
 
     <audio id="word-audio"></audio>
@@ -439,7 +439,7 @@
         async function loadContent() {
             welcomeScreen.style.display = 'none';
             contentScreen.style.display = 'block';
-            levelTitle.textContent = `المستوى ${selectedLevel} - ${languageSelect.options[languageSelect.selectedIndex].text}`;
+            levelTitle.textContent = `مستوي ${selectedLevel} - ${languageSelect.options[languageSelect.selectedIndex].text}`;
 
             try {
                 const response = await fetch(jsonUrls[selectedLanguage]);
