@@ -200,6 +200,16 @@
                 margin-top: 2vh;
             }
         }
+        * {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+  outline: none;
+}
+button, a, input {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+}
     </style>
 </head>
 <body><center/>
@@ -245,6 +255,10 @@
                 window.location.href = "dashboard.html";
             }
         });
+        document.getElementById('inuk').addEventListener('input', handleTranslation);
+        document.querySelectorAll('button, a, input').forEach(el => {
+  el.addEventListener('mouseup', () => el.blur());
+});
 
         function login() {
             let username = document.getElementById('username').value;
