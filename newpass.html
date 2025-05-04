@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تغيير كلمة المرور</title>
+  <title>change password</title>
   <style>
     @font-face {
       font-family: 'arabic';
@@ -110,25 +110,21 @@
 </head>
 <body>
 
-  <h2>تغيير كلمة المرور</h2>
+  <h2>change password</h2>
 
   <form id="changeForm">
     <input type="email" id="email" placeholder="ادخل بريدك الإلكتروني" required>
     <input type="tel" id="phone" placeholder="ادخل رقم الهاتف" required>
     <input type="password" id="newPassword" placeholder="ادخل كلمة المرور الجديدة" required>
-    <button type="submit">إجراء التغيير</button>
+    <button type="submit">Make the change</button>
   </form>
 
-  <div class="note">سوف يتم إرسال التفاصيل إلى فريق الدعم</div>
+  <div class="note">Details will be sent to the support team.</div>
 
   <!-- Popup -->
   <div class="popup-overlay" id="popup">
-    <div class="popup">
-      سيتم تغيير كلمة المرور خلال بضع ساعات<br>
-      ويمكنك العودة وتسجيل الدخول إلى حسابك بكل أمان
+    <div class="popup">The password will be changed once the status is confirmed.
     </div>
-  </div>
-
   <script>
     const form = document.getElementById('changeForm');
     const popup = document.getElementById('popup');
